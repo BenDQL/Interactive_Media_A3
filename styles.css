@@ -6,7 +6,10 @@
 
 body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   background-color: var(--dark_bg);
 }
 
@@ -22,6 +25,7 @@ body {
   min-height: 480px;
   margin: 0 auto;
   padding: 64px 32px;
+  position: relative;
   display: grid;
   grid-template-columns: 48px auto 48px;
   grid-template-rows: 120px 330px 32px;
@@ -31,15 +35,33 @@ body {
     ". indicator .";
 }
 
+#bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: 0;
+  visibility: hidden;
+}
+
 .section-title {
   color: var(--hovered_text_color);
   font-size: 48px;
   grid-area: header;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  z-index: 10;
 }
 
 .arrow {
   display: flex;
   align-items: center;
+  z-index: 11;
 }
 
 .left-arrow {
@@ -107,10 +129,17 @@ li.place {
   font-size: 32px;
   margin-block-end: 0px;
   margin-block-start: 0px;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p.introduction {
   padding: 0 24px;
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .read-more {
@@ -141,4 +170,15 @@ p.introduction {
 }
 .dot.active {
   background-color: var(--light-text);
+}
+
+/* Pop Up */
+.pop-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Make it centered */
+  width: 768px; /* Full width (cover the whole page) */
+  height: auto;
+  z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
 }

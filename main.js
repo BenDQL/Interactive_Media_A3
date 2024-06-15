@@ -7,36 +7,42 @@ const locations = [
     image: "travel_des1.svg",
     introduction:
       "Docklands is situated immediately west of Melbourne's central business district and fronts the Yarra River and Victoria Harbour.",
+    background: "travel_bg1.svg",
   },
   {
     name: "Federation Square",
     image: "travel_des2.svg",
     introduction:
       "Federation Square is a modern piazza that has become the city centre's public square.",
+    background: "travel_bg2.svg",
   },
   {
     name: "Luna Park",
     image: "travel_des3.svg",
     introduction:
       "Luna Park Melbourne is a small Family Friendly Amusement Park in St Kilda.",
+    background: "travel_bg3.svg",
   },
   {
     name: "Flinders Station",
     image: "travel_des4.svg",
     introduction:
       "Flinders Street Station is Australia’s oldest train station.",
+    background: "travel_bg4.svg",
   },
   {
     name: "State Library",
     image: "travel_des5.svg",
     introduction:
       "State Library Victoria is Australia's oldest public library and one of the first free public libraries in the world.",
+    background: "travel_bg5.svg",
   },
   {
     name: "St Patrick's Cathedral",
     image: "travel_des6.svg",
     introduction:
       "St Patrick’s Cathedral is the mother church of the Catholic Archdiocese of Melbourne.",
+    background: "travel_bg6.svg",
   },
 ];
 
@@ -83,6 +89,7 @@ const generateItem = (index) => {
   readMoreDiv.appendChild(link);
   div.appendChild(readMoreDiv);
   li.appendChild(div);
+  li.setAttribute("data-value", index);
 
   // Add event listener
   li.addEventListener("mouseover", placeOnHover);
@@ -137,6 +144,10 @@ const placeOnHover = (event) => {
     image.style.width = "100%";
     const hiddenContent = closestListItem.querySelector(".hovered-content");
     hiddenContent.style.visibility = "visible";
+    const bgImg = document.querySelector("#bg-image");
+    const currentIndex = Number(closestListItem.getAttribute("data-value"));
+    bgImg.src = `images/${locations[currentIndex].background}`;
+    bgImg.style.visibility = "visible";
   }
 };
 
@@ -148,6 +159,8 @@ const placeOnLeave = (event) => {
     image.style.width = "85%";
     const hiddenContent = closestListItem.querySelector(".hovered-content");
     hiddenContent.style.visibility = "hidden";
+    const bgImg = document.querySelector("#bg-image");
+    bgImg.style.visibility = "hidden";
   }
 };
 
