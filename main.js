@@ -1,6 +1,6 @@
 let startIndex = 0;
-const dots = [];
-const itemsPerPage = 3;
+const dots = []; // Scroll indicator in the bottom
+const itemsPerPage = 3; // Show 3 items at a time
 const locations = [
   {
     name: "Docklands",
@@ -74,6 +74,7 @@ const locations = [
   },
 ];
 
+// Click arrows should navigate to previous / next items
 const checkArrows = () => {
   const leftArrow = document.querySelector(".left-arrow");
   const righttArrow = document.querySelector(".right-arrow");
@@ -182,6 +183,7 @@ const checkIndicator = () => {
   dots[activeIndex].classList.add("active");
 };
 
+// Add locations, arrows, scroll indicator
 const setup = (placesList) => {
   for (let i = 0; i < locations.length; i++) {
     const place = generateItem(i);
@@ -231,5 +233,6 @@ const placeOnLeave = (event) => {
   }
 };
 
+// Add locations, arrows, scroll indicator when page is initialised
 const placesList = document.querySelector(".places");
 setup(placesList);
