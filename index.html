@@ -19,9 +19,24 @@
       href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
       rel="stylesheet"
     />
+
+    <!--Google font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="place-to-go">
+      <img id="bg-image" />
       <img id="bg-image" />
       <div class="arrow left-arrow" onclick="arrowClick(0)">
         <img
@@ -46,16 +61,21 @@
       <div class="indicator"></div>
     </section>
     <section class="pop-up">
-      <img class="pop-up-image" />
-      <h2>Docklands</h2>
-      <p>
-        Adorned with art sculptures and apartment buildings, Docklands is a
-        contemporary waterfront dining, retail and entertainment hub. Wander
-        through the pedestrian plazas to admire public murals and light
-        displays. Head to The District Docklands to browse high-end fashion,
-        jewellery and lifestyle pieces in an open-air shopping mall.
-      </p>
-      <button>Close</button>
+      <div class="content">
+        <h1 class="section-title"></h1>
+        <div class="detailed-intro"></div>
+        <div class="location">
+          <img
+            width="24"
+            height="24"
+            src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/FFFFFF/external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah.png"
+            alt="external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah"
+          /><span></span>
+        </div>
+        <div class="btn-wrapper">
+          <button class="btn" onclick="hidePopup()">Close</button>
+        </div>
+      </div>
     </section>
     <script src="main.js"></script>
   </body>

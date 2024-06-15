@@ -2,6 +2,7 @@
   --dark_bg: #1e1e1e;
   --hovered_text_color: #ffee51;
   --light-text: #ffffff;
+  --pop_up_bg: #372f2f;
 }
 
 body {
@@ -10,7 +11,20 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   background-color: var(--dark_bg);
+  color: var(--light-text);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 .container {
@@ -25,6 +39,7 @@ body {
   min-height: 480px;
   margin: 0 auto;
   padding: 64px 32px;
+  position: relative;
   position: relative;
   display: grid;
   grid-template-columns: 48px auto 48px;
@@ -47,10 +62,26 @@ body {
   visibility: hidden;
 }
 
+#bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: 0;
+  visibility: hidden;
+}
+
 .section-title {
   color: var(--hovered_text_color);
-  font-size: 48px;
   grid-area: header;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  z-index: 10;
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
   font-weight: 800;
@@ -61,6 +92,7 @@ body {
 .arrow {
   display: flex;
   align-items: center;
+  z-index: 11;
   z-index: 11;
 }
 
@@ -133,10 +165,17 @@ li.place {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p.introduction {
   padding: 0 24px;
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
   font-family: "Alice", serif;
   font-weight: 400;
   font-style: normal;
@@ -150,6 +189,23 @@ p.introduction {
   a {
     color: var(--light-text);
   }
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--light-text);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .indicator {
@@ -178,7 +234,49 @@ p.introduction {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Make it centered */
-  width: 768px; /* Full width (cover the whole page) */
+  width: 90%; /* Full width (cover the whole page) */
+  max-width: 1080px;
   height: auto;
+  min-height: 480px;
   z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
+  background-color: var(--pop_up_bg);
+  border-radius: 30px;
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(55, 47, 47, 0.5),
+      rgba(55, 47, 47, 0.95),
+      rgba(55, 47, 47, 1),
+      rgba(55, 47, 47, 1),
+      rgba(55, 47, 47, 1)
+    ),
+    url("images/travel_bg1.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 0 70%;
+  display: none;
+  justify-content: flex-end;
+}
+
+.pop-up .content {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h1 {
+    margin-block-end: 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .location {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
 }
