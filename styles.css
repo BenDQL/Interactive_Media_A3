@@ -17,6 +17,11 @@ body {
   align-items: center;
   background-color: var(--dark_bg);
   color: var(--light-text);
+
+  /* Font for normal content */
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
@@ -75,17 +80,7 @@ h2 {
 }
 
 .section-title {
-  color: var(--hovered_text_color);
   grid-area: header;
-  font-family: "Cinzel", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  z-index: 10;
-  font-family: "Cinzel", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
   z-index: 10;
 }
 
@@ -156,29 +151,22 @@ li.place {
 
 .title {
   color: var(--hovered_text_color);
-  grid-row: 1 / span 2;
-  text-align: center;
-  font-size: 32px;
   margin-block-end: 0px;
   margin-block-start: 0px;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif; /* Font for normal content */
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
-  font-family: "Cinzel", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+}
+
+.location-title {
+  grid-row: 1 / span 2;
+  text-align: center;
+  font-size: 2rem;
 }
 
 p.introduction {
   padding: 0 24px;
-  font-family: "Alice", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Alice", serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .read-more {
@@ -229,16 +217,23 @@ p.introduction {
 }
 
 /* Pop Up */
-.pop-up {
+#overlay-pop-up {
+  /* Create a dark overlay on screen */
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Make it centered */
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center; /* Centre the pop up content */
+  align-items: center;
+  z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.pop-up {
   width: 90%; /* Full width (cover the whole page) */
   max-width: 1080px;
   height: auto;
   min-height: 480px;
-  z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
   background-color: var(--pop_up_bg);
   border-radius: 30px;
   background-image: linear-gradient(
@@ -254,7 +249,7 @@ p.introduction {
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: 0 70%;
-  display: none;
+  display: flex;
   justify-content: flex-end;
 }
 
@@ -279,4 +274,11 @@ p.introduction {
     align-items: center;
     gap: 5px;
   }
+}
+
+.pop-up .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }

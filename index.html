@@ -1,11 +1,18 @@
-<!--I want to design this section, called “Top popular location”, where users can find the most popular travel destination within Melbourne.
+<!--    My main goal is to design a clean web page and viewer can have a good user experience.
+    In many travel websites, they are using los of lots of images or videos to grab users' attention.
+    Also they are supposed to share many detailed content for travellers, but most lengthy content such as text are hidden in the homepage, in order to maintain a clean, navigable layout.
+    I want to design this section, called “Top popular location”, where users can find the most popular travel destination within Melbourne.
     I will use hover and horizontal scrolling (by clicking) as the main actions for my prototype.
     In my website design, I get add the title "Popular Locations" on the top left side to let viewer know where they are.
-    I put 3 locations in the first page. 
-    To let viewer konw they can see more popular locations I added the right and left arrow. When viewer click this button, they can see another three popular locations
+    I put 3 locations in the first page. If there are too many images on the page, it will affect the viewer's browsing experience。
+    To let viewer konw they can see more popular locations I added the right and left arrow. When viewer click this button, they can see another three popular locations.
+    I added position indicator in the buttom of the photo to let users know where they are.
     To make the web page look clean, I hide the text content.
     I will use hover action on each location photo, when viewer hover the location photo,the content will display.
-    I add "see more" button which 
+    I add "see more" button which viewer can see more location information.
+    When viewer click "see more" button, the new page will coming up in the same page（not going to another page）, in order to provide the viewer with a good user experience.
+    In order to have more interaction on the homepage, I change different background when viewer hover different loaction.
+    Also, I reduced the opacity of the background so that the viewer doesn't feel the page is cluttered.
     -->
 
 <!DOCTYPE html>
@@ -56,7 +63,7 @@
           alt="back"
         />
       </div>
-      <h1 class="section-title">Popular Locations</h1>
+      <h1 class="section-title title">Popular Locations</h1>
       <div class="container">
         <ul class="places"></ul>
       </div>
@@ -70,20 +77,29 @@
       </div>
       <div class="indicator"></div>
     </section>
-    <section class="pop-up">
-      <div class="content">
-        <h1 class="section-title"></h1>
-        <div class="detailed-intro"></div>
-        <div class="location">
-          <img
-            width="24"
-            height="24"
-            src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/FFFFFF/external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah.png"
-            alt="external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah"
-          /><span></span>
-        </div>
-        <div class="btn-wrapper">
-          <button class="btn" onclick="hidePopup()">Close</button>
+    <section id="overlay-pop-up">
+      <div class="pop-up">
+        <div class="content">
+          <h1 class="section-title title"></h1>
+          <div class="detailed-intro"></div>
+          <div class="location">
+            <img
+              width="24"
+              height="24"
+              src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/FFFFFF/external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah.png"
+              alt="external-location-customer-reviews-tanah-basah-basic-outline-tanah-basah"
+            /><span></span>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn" onclick="hidePopup()">
+              <img
+                width="32"
+                height="32"
+                src="https://img.icons8.com/external-neu-royyan-wijaya/32/FFFFFF/external-cancel-neu-interface-neu-royyan-wijaya-4.png"
+                alt="external-cancel-neu-interface-neu-royyan-wijaya-4"
+              /><span>Close</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

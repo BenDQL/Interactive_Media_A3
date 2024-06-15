@@ -93,6 +93,7 @@ const showPopup = (event) => {
   // Get item index from clicking
   const closestListItem = event.target.closest("li");
   const currentIndex = Number(closestListItem.getAttribute("data-value"));
+  const popupOverlay = document.querySelector("#overlay-pop-up");
   const popup = document.querySelector(".pop-up");
   popup.style.backgroundImage = `linear-gradient(
       90deg,
@@ -112,13 +113,13 @@ const showPopup = (event) => {
     .join("");
   const location = popup.querySelector(".location span");
   location.textContent = locations[currentIndex].location;
-  popup.style.display = "flex";
+  popupOverlay.style.display = "flex";
 };
 
 // Click "close" to hide popup
 const hidePopup = (event) => {
-  const popup = document.querySelector(".pop-up");
-  popup.style.display = "none";
+  const popupOverlay = document.querySelector("#overlay-pop-up");
+  popupOverlay.style.display = "none";
 };
 
 const generateItem = (index) => {
@@ -133,6 +134,7 @@ const generateItem = (index) => {
   div.classList.add("hovered-content", "gradient-box");
 
   const h2 = document.createElement("h2");
+  h2.classList.add("location-title");
   h2.classList.add("title");
   h2.textContent = locations[index].name;
   div.appendChild(h2);
